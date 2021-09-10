@@ -65,10 +65,7 @@ function createBlock(text) {
 	}
 
 	Blockchain.blocks.push(newBlock);
-	// takes text for its data
-	// creates object for the block
-	// computes its hash
-	// insert into the array
+
 }
 
 function verifyChain(blockchain) {
@@ -91,7 +88,7 @@ function verifyChain(blockchain) {
 
 function verifyBlock(block, prevBlock) {
 	let neededFields = ['data', 'prevHash'];
-    neededFields.forEach(function (neededField, index) {
+	neededFields.forEach(function (neededField, index) {
 		if (typeof(block[neededField]) === 'undefined' || !block[neededField] || block[neededField].length < 1) {
 			console.log(`fail: ${neededField} empty`);
 			return false;
